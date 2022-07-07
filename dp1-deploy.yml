@@ -24,7 +24,7 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: dp1console
-  # namespace: integration
+  # namespace: integrationclear
 spec:
   to:
     kind: Service
@@ -84,7 +84,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-RJON-BYDR3Q
+    license: L-RJON-CCAT5F
     use: nonproduction
   resources:
     limits:
@@ -92,6 +92,12 @@ spec:
     requests:
       cpu: 1
       memory: 4Gi
+#  storage:
+#  - type: persistent
+#    path: /opt/ibm/datapower/drouter/config
+#    size: 10Gi
+#    class: ibmc-block-gold
+#    volumeMode: Block
   domains:
   - name: "RRdomain"
     certs:
@@ -110,5 +116,5 @@ spec:
     - accessLevel: privileged
       name: admin
       passwordSecret: dp-admin-credentials
-  version: 10.0-cd
+  version: 10.5-lts
   replicas: 1
